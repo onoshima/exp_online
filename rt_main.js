@@ -2,6 +2,7 @@ const repo_site = "https://onoshima.github.io/exp_online/"
 
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
+      display_element: 'display_stage',
         on_finish: function() {
           jsPsych.data.displayData();
         }
