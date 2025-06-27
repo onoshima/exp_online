@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://unpkg.com/jspsych@7.3.4"></script>
+    <!--<script src="https://unpkg.com/jspsych@7.3.4"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
-    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" />
-    <script src="jspsych-psychophysics.js"></script>
-    <!--<script src="https://unpkg.com/jspsych@8.2.1"></script>
+    <link href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet" type="text/css" />-->
+    <script src="https://unpkg.com/jspsych@8.2.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
-    <link href="https://unpkg.com/jspsych@8.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />-->
+    <link href="https://unpkg.com/jspsych@8.2.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <script src="jspsych-psychophysics.js"></script>
+    <style>
+        .no-touch-action {
+            touch-action: none;
+        }
+    </style>
 </head>
 <body></body>
 <script>    
@@ -67,7 +72,7 @@
 
     const word = {
         obj_type: 'text',
-        content: jsPsych.timelineVariable('stimulus'),
+        content: jsPsych.TimelineVariable('stimulus'),
         fontSize: '60px',
         startY: 60,
         origin_center: true
@@ -125,6 +130,7 @@
             data.touch_y = touch_y;
             data.response_touch = response_touch;
         },
+        css_classes: ['no-touch-action'],
         touchstart_func: function(event){
 
             const touch = event.touches[0];
