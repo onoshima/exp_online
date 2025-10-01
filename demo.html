@@ -14,7 +14,8 @@
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
       on_finish: function() {
-        jQuery("#NextButton").click()
+        Qualtrics.SurveyEngine.showNextButton();
+        document.querySelector('button[type="submit"]').click();
       }
     });
 
