@@ -14,9 +14,11 @@
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
       on_finish: function() {
-        window.parent.postMessage({ event: "experimentFinished" }, "*");
+        window.parent.postMessage({ event: "experimentFinished", id: id }, "*");
       }
     });
+
+    const id = jsPsych.randomization.randomID(5);
 
     const condition = jsPsych.data.getURLVariable('con');
     console.log(condition);
