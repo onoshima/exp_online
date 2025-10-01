@@ -13,8 +13,12 @@
 
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
-      on_finish: function() {
-        window.parent.postMessage({ event: "experimentFinished", id: id }, "*");
+      on_finish: function(data) {
+        window.parent.postMessage({
+          event: "experimentFinished",
+          id: id,
+          data: jsPsych.data
+        }, "*");
       }
     });
 
