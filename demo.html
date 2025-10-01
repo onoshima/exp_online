@@ -17,7 +17,7 @@
         window.parent.postMessage({
           event: "experimentFinished",
           id: id,
-          data: jsPsych.data
+          data: jsPsych.data.get().json()
         }, "*");
       }
     });
