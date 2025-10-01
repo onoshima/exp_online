@@ -11,10 +11,12 @@
   <body></body>
   <script>
 
+    const targetOrigin = "https://agup.qualtrics.com/jfe/form/SV_0JVqx73RUw5IsT4";
+
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
       on_finish: function() {
-        window.postMessage("Finished");
+        window.postMessage("Finished", targetOrigin);
       }
     });
 
