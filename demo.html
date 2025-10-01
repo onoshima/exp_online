@@ -11,12 +11,10 @@
   <body></body>
   <script>
 
-    const targetOrigin = "https://onoshima.github.io";
-
     /* initialize jsPsych */
     var jsPsych = initJsPsych({
       on_finish: function() {
-        window.postMessage("Finished", targetOrigin);
+        window.parent.postMessage({ event: "experimentFinished" }, "*");
       }
     });
 
