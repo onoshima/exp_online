@@ -23,6 +23,8 @@
     });
 
     const id = jsPsych.randomization.randomID(5);
+    const urlvar = jsPsych.data.urlVariables();
+    console.log(urlvar.participantID);
 
     const condition = jsPsych.data.getURLVariable('con');
     console.log(condition);
